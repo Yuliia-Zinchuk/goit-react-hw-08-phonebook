@@ -32,7 +32,7 @@ export const ContactsPage = () => {
   const dispath = useDispatch();
 
   useEffect(() => {
-    // dispath(fetchContacts());
+    dispath(fetchContacts());
     dispath(fetchCurrentUser());
   }, [dispath]);
 
