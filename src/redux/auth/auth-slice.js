@@ -1,6 +1,6 @@
 import { register, login, logout, fetchCurrentUser } from './auth-operations';
 import { createSlice } from '@reduxjs/toolkit';
-import { Loader } from 'components/Loader/Loader';
+//import { Loader } from 'components/Loader/Loader';
 
 const initialState = {
   user: {
@@ -8,7 +8,7 @@ const initialState = {
     email: '',
   },
   token: null,
-  isLoggedIn: false,
+  //   isLoggedIn: false,
   isLoading: false,
   error: null,
   isFetchingCurrentUser: false,
@@ -25,7 +25,7 @@ const authSlice = createSlice({
       state.isLoading = false;
       state.token = token;
       state.user = user;
-      state.isLoggedIn = true;
+      //   state.isLoggedIn = true;
     },
     [register.rejected]: (state, { payload }) => {
       state.isLoading = false;
@@ -39,7 +39,7 @@ const authSlice = createSlice({
       state.isLoading = false;
       state.token = token;
       state.user = user;
-      state.isLoggedIn = true;
+      //   state.isLoggedIn = true;
     },
     [login.rejected]: (state, { payload }) => {
       state.isLoading = false;
@@ -55,7 +55,7 @@ const authSlice = createSlice({
         name: '',
         email: '',
       };
-      state.isLoggedIn = false;
+      //   state.isLoggedIn = false;
     },
     [logout.rejected]: (state, { payload }) => {
       state.isLoading = false;
@@ -68,7 +68,7 @@ const authSlice = createSlice({
     [fetchCurrentUser.fulfilled]: (state, { payload }) => {
       state.isLoading = false;
       state.user = payload;
-      state.isLoggedIn = true;
+      //   state.isLoggedIn = true;
       state.isFetchingCurrentUser = false;
     },
     [fetchCurrentUser.rejected]: (state, { payload }) => {

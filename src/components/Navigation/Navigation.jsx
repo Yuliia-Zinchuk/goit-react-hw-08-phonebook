@@ -1,6 +1,9 @@
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectToken } from 'redux/auth/auth-selectors';
 
 export const Navigation = () => {
+  const token = useSelector(selectToken);
   return (
     <nav>
       <ul>
@@ -9,9 +12,11 @@ export const Navigation = () => {
             Home
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/contacts">Contacts</NavLink>
-        </li>
+        {token && (
+          <li>
+            <NavLink to="/contacts">Contacts</NavLink>
+          </li>
+        )}
       </ul>
     </nav>
   );

@@ -22,7 +22,7 @@ import { onFilter } from 'redux/filter/filter-slice';
 
 // import { RegisterForm } from './RegisterForm/RegisterForm';
 // import { LoginForm } from './LoginForm/LoginForm';
-import { fetchCurrentUser } from 'redux/auth/auth-operations';
+//import { fetchCurrentUser } from 'redux/auth/auth-operations';
 //import { ContactsList } from 'components/ContactsList/ContactsList';
 
 export const ContactsPage = () => {
@@ -33,7 +33,7 @@ export const ContactsPage = () => {
 
   useEffect(() => {
     dispath(fetchContacts());
-    dispath(fetchCurrentUser());
+    // dispath(fetchCurrentUser());
   }, [dispath]);
 
   const onAddContact = data => {
