@@ -36,6 +36,7 @@ export const LoginForm = () => {
         <input
           type="email"
           name="email"
+          autoComplete="username"
           value={email}
           onChange={handleChange}
         />
@@ -45,6 +46,7 @@ export const LoginForm = () => {
         <input
           type="password"
           name="password"
+          autoComplete="current-password"
           value={password}
           onChange={handleChange}
         />

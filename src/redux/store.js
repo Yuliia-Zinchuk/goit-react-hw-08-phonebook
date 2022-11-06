@@ -1,4 +1,4 @@
-import contactsReducer from 'redux/contacts/contacts-slice';
+import { contactsReducer } from 'redux/contacts/contacts-slice';
 import filterReducer from 'redux/filter/filter-slice';
 import authReducer from './auth/auth-slice';
 
