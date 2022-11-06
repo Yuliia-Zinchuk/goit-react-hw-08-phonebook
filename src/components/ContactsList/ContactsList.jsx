@@ -6,7 +6,7 @@ import { selectVisibleContacts } from 'redux/contacts/contacts-selectors';
 import css from './ContactsList.module.css';
 //import { selectContacts } from 'redux/contacts/contactsSelectors';
 
-export const ContactsList = ({ onDeleteContact }) => {
+export const ContactsList = ({ onDeleteContact, onUpdateContactModal }) => {
   // const contacts = useSelector(selectContacts);
   const visibleContacts = useSelector(selectVisibleContacts);
   console.log(visibleContacts);
@@ -23,6 +23,9 @@ export const ContactsList = ({ onDeleteContact }) => {
                 number={number}
                 onDeleteContact={() => {
                   onDeleteContact(id);
+                }}
+                onUpdateContact={() => {
+                  onUpdateContactModal(id);
                 }}
               />
             </li>

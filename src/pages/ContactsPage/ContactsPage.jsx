@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ContactsForm } from 'components/ContactsForm/ContactsForm';
@@ -16,9 +16,13 @@ import {
 import {
   fetchContacts,
   addContact,
+  // updateContact,
   deleteContact,
 } from 'redux/contacts/contacts-operations';
 import { onFilter } from 'redux/filter/filter-slice';
+
+import css from './ContactsPage.module.css';
+import { Modal } from 'components/Modal/Modal';
 
 // import { RegisterForm } from './RegisterForm/RegisterForm';
 // import { LoginForm } from './LoginForm/LoginForm';
@@ -26,6 +30,9 @@ import { onFilter } from 'redux/filter/filter-slice';
 //import { ContactsList } from 'components/ContactsList/ContactsList';
 
 export const ContactsPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  //const openModal = () => setIsModalOpen(true);
+  const [contactToUpdate, setContactToUpdate] = useState(null);
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -48,32 +55,55 @@ export const ContactsPage = () => {
     dispath(onFilter(value));
   };
 
+  const onUpdateContactModal = contactId => {
+    openModal();
+    const contact = contacts.find(({ id }) => id === contactId);
+    setContactToUpdate(contact);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   const onDeleteContact = contactId => {
     dispath(deleteContact(contactId));
   };
 
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
   return (
     <>
-      {/* <RegisterForm />
-      <LoginForm /> */}
-      {/* <button onClick={() => dispath(logout())}>Logout</button> */}
-      <Section title="Phonebook">
-        <ContactsForm onSubmit={onAddContact} />
-      </Section>
+      <div className={css.wraper}>
+        <Section title="Phonebook">
+          <ContactsForm onSubmit={onAddContact} />
+        </Section>
 
-      <Section title="Contacts">
-        {<Filter handleChange={handleChange} />}
-        {error && <p>{error.message}</p>}
-        {contacts && !error && (
-          <ContactsList onDeleteContact={onDeleteContact} />
-        )}
-        {isLoading && <Loader />}
-      </Section>
+        <Section title="Contacts">
+          {<Filter handleChange={handleChange} />}
+          {error && <p>{error.message}</p>}
+          {contacts && !error && (
+            <ContactsList
+              onDeleteContact={onDeleteContact}
+              onUpdateContactModal={onUpdateContactModal}
+              openModal={openModal}
+            />
+          )}
+          {isLoading && <Loader />}
+        </Section>
+      </div>
       <ToastContainer
         autoClose={3000}
         position="top-center"
         hideProgressBar={false}
       />
+      {isModalOpen && (
+        <Modal
+          contact={contactToUpdate}
+          closeModal={closeModal}
+          // onUpdateContact={changeContact}
+        />
+      )}
     </>
   );
 };

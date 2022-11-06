@@ -1,11 +1,20 @@
 import PropTypes from 'prop-types';
 import css from './ContactsList.module.css';
 
-export const ContactsListItem = ({ name, number, onDeleteContact }) => (
+export const ContactsListItem = ({
+  name,
+  number,
+  onUpdateContact,
+  openModal,
+  onDeleteContact,
+}) => (
   <>
     <p className={css.contactNumber}>
       {name}: {number}
     </p>
+    <button className={css.btn} onClick={onUpdateContact} type="button">
+      Update
+    </button>
     <button className={css.btn} onClick={onDeleteContact} type="button">
       Delete
     </button>
@@ -21,3 +30,4 @@ ContactsListItem.propTypes = {
     }).isRequired
   ),
 };
+// prop functions!!!!!!!!!!!!!!!!!!!!!!!!!

@@ -7,16 +7,14 @@ import { AuthNavigation } from 'components/AuthNavigation/AuthNavigation';
 import { UserAuthMenu } from 'components/UserAuthMenu/UserAuthMenu';
 //import isLoggedIn from '../../redux/auth/auth-slice.reducer';
 //import token from '../../redux/auth/auth-slice';
-
+import css from './AppBar.module.css';
 export const AppBar = () => {
   const token = useSelector(selectToken);
 
   return (
-    <>
+    <header className={css.header}>
       <Navigation />
-
       {token ? <UserAuthMenu /> : <AuthNavigation />}
-      {/* <h1>`Welcome ${userName}`</h1> */}
-    </>
+    </header>
   );
 };
