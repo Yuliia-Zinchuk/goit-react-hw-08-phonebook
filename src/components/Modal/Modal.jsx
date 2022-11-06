@@ -1,12 +1,12 @@
-import { Loader } from 'components/Loader/Loader';
+//import { Loader } from 'components/Loader/Loader';
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { UpdateContactForm } from 'components/UpdateContactForm/UpdateContactForm';
 
 import css from './Moda.module.css';
 
 export const Modal = ({ closeModal, contact }) => {
-  const [loaded, setLoaded] = useState(false);
+  // const [loaded, setLoaded] = useState(false);
   useEffect(() => {
     const closeByEscape = ({ code }) => {
       if (code === 'Escape') {
@@ -25,9 +25,9 @@ export const Modal = ({ closeModal, contact }) => {
       closeModal();
     }
   };
-  const loadHandler = () => {
-    setLoaded(true);
-  };
+  // const loadHandler = () => {
+  //   setLoaded(true);
+  // };
   return (
     <div className={css.Overlay} onClick={closeByBackdrop}>
       <div className={css.Modal}></div>
@@ -36,9 +36,7 @@ export const Modal = ({ closeModal, contact }) => {
   );
 };
 
-// Modal.propTypes = {
-//   closeModal: PropTypes.func.isRequired,
-//   src: PropTypes.object.isRequired,
-// };
-
-//onSubmit = { onUpdateContact };
+Modal.propTypes = {
+  contact: PropTypes.object.isRequired,
+  closeModal: PropTypes.func.isRequired,
+};

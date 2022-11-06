@@ -6,8 +6,8 @@ import { updateContact } from 'redux/contacts/contacts-operations';
 import css from './UpdateContactForm.module.css';
 
 export const UpdateContactForm = ({ contact, closeModal }) => {
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  // const [name, setName] = useState('');
+  // const [number, setNumber] = useState('');
   const [contactName, setContactName] = useState(contact.name);
   const [contactNumber, setContactNumber] = useState(contact.number);
   const dispatch = useDispatch();
@@ -24,6 +24,7 @@ export const UpdateContactForm = ({ contact, closeModal }) => {
       updateContact({ ...contact, name: contactName, number: contactNumber })
     );
     closeModal();
+    //reset();
   };
 
   const changeContact = e => {
@@ -46,10 +47,10 @@ export const UpdateContactForm = ({ contact, closeModal }) => {
   //     reset();
   //   };
 
-  const reset = () => {
-    setName('');
-    setNumber('');
-  };
+  // const reset = () => {
+  //   setName('');
+  //   setNumber('');
+  // };
 
   return (
     <form className={css.form} onSubmit={handleSubmit}>
@@ -88,6 +89,7 @@ export const UpdateContactForm = ({ contact, closeModal }) => {
   );
 };
 
-// ContactsForm.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-// };
+UpdateContactForm.propTypes = {
+  contact: PropTypes.object.isRequired,
+  closeModal: PropTypes.func.isRequired,
+};
