@@ -1,22 +1,7 @@
 .wraper {
+  margin-left: 200px;
+  margin-right: 200px;
   display: flex;
-  gap: 15px;
-  padding-left: 70px;
-  padding-right: 70px;
-
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: baseline;
-}
-
-.contactsListwraper {
-  /* display: flex;
-  flex-direction: column;
-  position: relative;
-  padding: 20px;
-  width: 100%; */
-  /* background: rgb(255, 255, 255); */
-  /* box-shadow: rgb(126 147 255 / 20%) 0px 1px 4px; */
-  /* border-radius: 8px; */
-  /* width: 100%; */
-  /* width: 800px; */
 }
