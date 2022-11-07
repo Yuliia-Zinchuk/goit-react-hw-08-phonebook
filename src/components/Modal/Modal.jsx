@@ -1,12 +1,10 @@
-//import { Loader } from 'components/Loader/Loader';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { UpdateContactForm } from 'components/UpdateContactForm/UpdateContactForm';
 
-import css from './Moda.module.css';
+import css from './Modal.module.css';
 
 export const Modal = ({ closeModal, contact }) => {
-  // const [loaded, setLoaded] = useState(false);
   useEffect(() => {
     const closeByEscape = ({ code }) => {
       if (code === 'Escape') {
@@ -25,9 +23,7 @@ export const Modal = ({ closeModal, contact }) => {
       closeModal();
     }
   };
-  // const loadHandler = () => {
-  //   setLoaded(true);
-  // };
+
   return (
     <div className={css.Overlay} onClick={closeByBackdrop}>
       <div className={css.Modal}></div>

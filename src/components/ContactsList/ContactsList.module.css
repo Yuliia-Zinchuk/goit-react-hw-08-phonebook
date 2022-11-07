@@ -1,45 +1,72 @@
+.contactListWraper {
+  /* width: 100%;
+  max-width: 800px; */
+}
 .contactsList {
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
+  /* display: flex; */
+
   padding: 0;
   font-weight: 400;
   font-size: 18px;
-  max-width: 400px;
+  /* width: 100%; */
 }
 
 .contactItem {
-  display: flex;
-
+  /* display: flex; */
+  /* gap: 25px; */
   align-items: center;
+  justify-content: flex-end;
+  /* justify-content: space-between; */
+}
+
+.contact {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  /* justify-content: flex-end; */
   justify-content: space-between;
+  border-bottom: 1px solid grey;
 }
 
 .contactNumber {
+  display: flex;
+  justify-content: flex-start;
   margin: 0;
   padding: 10px 5px;
 }
-.btn {
-  display: block;
 
-  padding: 5px 10px;
+.btnWraper {
+  display: flex;
+  gap: 5px;
+}
+.btn {
+  /* display: block; */
+  /* padding: 2px 5px; */
+  /* padding: 5px 10px; */
   font-size: 14px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   outline: none;
-  color: #fff;
-  background-color: #315bd1;
+  color: #315bd1;
+  /* color: #fff; */
+  /* background-color: #315bd1; */
+  background-color: transparent;
   border: none;
   border-radius: 5px;
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .btn:hover {
-  background-color: #0b1baa;
+  /* background-color: #0b1baa; */
+  color: #0b1baa;
+  transform: scale(1.5);
 }
 
 .btn:active {
-  background-color: #0b1baa;
-  box-shadow: 0 5px #666;
+  color: #0b1baa;
+  /* box-shadow: 0 5px #666; */
   transform: translateY(4px);
 }

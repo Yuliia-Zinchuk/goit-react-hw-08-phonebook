@@ -1,27 +1,34 @@
 import PropTypes from 'prop-types';
+import { HiOutlineTrash, HiOutlinePencil } from 'react-icons/hi';
 import css from './ContactsList.module.css';
 
 export const ContactsListItem = ({
   name,
   number,
   onUpdateContact,
-  openModal,
+
   onDeleteContact,
 }) => (
   <>
-    <p className={css.contactNumber}>
-      {name}: {number}
-    </p>
-    <button className={css.btn} onClick={onUpdateContact} type="button">
-      Update
-    </button>
-    <button className={css.btn} onClick={onDeleteContact} type="button">
-      Delete
-    </button>
+    <div className={css.contact}>
+      <p className={css.contactNumber}>
+        {name}: {number}
+      </p>
+      <div className={css.btnWraper}>
+        {' '}
+        <button className={css.btn} onClick={onUpdateContact} type="button">
+          <HiOutlinePencil size={16} />
+        </button>
+        <button className={css.btn} onClick={onDeleteContact} type="button">
+          <HiOutlineTrash size={16} />
+        </button>
+      </div>
+    </div>
   </>
 );
 ContactsListItem.propTypes = {
   onDeleteContact: PropTypes.func.isRequired,
+  onUpdateContact: PropTypes.func.isRequired,
 
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
@@ -30,4 +37,3 @@ ContactsListItem.propTypes = {
     }).isRequired
   ),
 };
-// prop functions!!!!!!!!!!!!!!!!!!!!!!!!!

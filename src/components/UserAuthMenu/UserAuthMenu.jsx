@@ -5,13 +5,15 @@ import css from './UserAuthMenu.module.css';
 export const UserAuthMenu = () => {
   const dispath = useDispatch();
   const userName = useSelector(selectName);
-  console.log(userName);
+  // console.log(userName);
   return (
     <>
       <div className={css.wrapper}>
         {/* <p>Welcome {userName}!</p> так я писала, а второй вариант от Алены через шаблонку*/}
         <p className={css.userWelcome}>{`Welcome ${userName}!`}</p>
-        <button onClick={() => dispath(logout())}>Logout</button>
+        <button className={css.btn} onClick={() => dispath(logout())}>
+          Logout
+        </button>
       </div>
     </>
   );

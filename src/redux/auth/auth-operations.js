@@ -20,7 +20,7 @@ export const register = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
-      return rejectWithValue(error);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -33,7 +33,7 @@ export const login = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
-      return rejectWithValue(error);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -45,7 +45,7 @@ export const logout = createAsyncThunk(
       await axios.post('/users/logout');
       token.unset();
     } catch (error) {
-      return rejectWithValue(error);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -54,7 +54,7 @@ export const fetchCurrentUser = createAsyncThunk(
   'auth/refresh',
   async (_, { rejectWithValue, getState }) => {
     const tokenLocalStorage = getState().auth.token;
-    console.log(tokenLocalStorage);
+    // console.log(tokenLocalStorage);
     if (!tokenLocalStorage) {
       return rejectWithValue();
     }
@@ -64,7 +64,7 @@ export const fetchCurrentUser = createAsyncThunk(
       //token.set(data.tokenLocalStorage);
       return data;
     } catch (error) {
-      return rejectWithValue(error);
+      return rejectWithValue(error.message);
     }
   }
 );

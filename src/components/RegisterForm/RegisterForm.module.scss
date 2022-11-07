@@ -2,8 +2,8 @@
   max-width: 300px;
   margin-right: auto;
   margin-left: auto;
-  padding-bottom: 10px;
 
+  padding-top: 30px;
   width: 100%;
 }
 .inputForm {
@@ -21,9 +21,15 @@ span {
 
 .input {
   border-radius: 8px;
-  border: 1px solid rgb(5, 25, 87);
+  border: 1px solid #1f54e7;
   padding: 8px 12px;
   font-size: 18px;
+  outline: none;
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid #0b1baa;
+  }
 }
 
 .btn {
@@ -44,11 +50,11 @@ span {
 }
 
 .btn:hover {
-  background-color: #0b1baa;
+  background-color: #172ce9;
 }
 
 .btn:active {
-  background-color: #0b1baa;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+  background-color: #172ce9;
+  box-shadow: 0 1px #666;
+  transform: translateY(2px);
 }

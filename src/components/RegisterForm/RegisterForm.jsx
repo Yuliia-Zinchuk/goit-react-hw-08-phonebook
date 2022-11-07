@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/auth-operations';
-import css from './RegisterForm.module.css';
+import css from './RegisterForm.module.scss';
 
 export const RegisterForm = () => {
   const [name, setName] = useState('');

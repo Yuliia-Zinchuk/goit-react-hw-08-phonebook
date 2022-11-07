@@ -80,16 +80,18 @@ export const ContactsPage = () => {
         </Section>
 
         <Section title="Contacts">
-          {<Filter handleChange={handleChange} />}
-          {error && <p>{error.message}</p>}
-          {contacts && !error && (
-            <ContactsList
-              onDeleteContact={onDeleteContact}
-              onUpdateContactModal={onUpdateContactModal}
-              openModal={openModal}
-            />
-          )}
-          {isLoading && <Loader />}
+          <div className={css.contactsListwraper}>
+            {<Filter handleChange={handleChange} />}
+            {error && <p>{error}</p>}
+            {contacts && !error && (
+              <ContactsList
+                onDeleteContact={onDeleteContact}
+                onUpdateContactModal={onUpdateContactModal}
+                openModal={openModal}
+              />
+            )}
+            {isLoading && <Loader />}
+          </div>
         </Section>
       </div>
       <ToastContainer
@@ -97,12 +99,9 @@ export const ContactsPage = () => {
         position="top-center"
         hideProgressBar={false}
       />
+
       {isModalOpen && (
-        <Modal
-          contact={contactToUpdate}
-          closeModal={closeModal}
-          // onUpdateContact={changeContact}
-        />
+        <Modal contact={contactToUpdate} closeModal={closeModal} />
       )}
     </>
   );
