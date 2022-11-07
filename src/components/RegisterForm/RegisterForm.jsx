@@ -43,6 +43,7 @@ export const RegisterForm = () => {
           className={css.input}
           type="text"
           name="name"
+          placeholder="John Doe"
           value={name}
           onChange={handleChange}
         />
@@ -53,6 +54,7 @@ export const RegisterForm = () => {
           className={css.input}
           type="email"
           name="email"
+          placeholder="mail@example.com"
           autoComplete="username"
           value={email}
           onChange={handleChange}
@@ -64,6 +66,7 @@ export const RegisterForm = () => {
           className={css.input}
           type="password"
           name="password"
+          placeholder="Password"
           autoComplete="current-password"
           value={password}
           onChange={handleChange}

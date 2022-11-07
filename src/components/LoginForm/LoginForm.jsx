@@ -38,6 +38,7 @@ export const LoginForm = () => {
           className={css.input}
           type="email"
           name="email"
+          placeholder="mail@example.com"
           value={email}
           onChange={handleChange}
         />
@@ -48,6 +49,7 @@ export const LoginForm = () => {
           className={css.input}
           type="password"
           name="password"
+          placeholder="Password"
           value={password}
           onChange={handleChange}
         />
