@@ -1,0 +1,22 @@
+@import '../../assets/styles/mixins';
+.headerNav {
+  min-height: 64px;
+  display: flex;
+}
+
+.navList {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  justify-content: center;
+
+  @include mq(tab) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @include mq(desk) {
+    gap: 15px;
+    list-style-type: none;
+  }
+}

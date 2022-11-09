@@ -1,12 +1,14 @@
 .titleUpdate {
   margin: 20px;
-  padding-left: 80px;
+  padding-left: 65px;
   margin-right: auto;
+  color: var(--title-text-color);
+  font-size: 30px;
 }
 .formAddWraper {
   width: 320px;
   height: 300px;
-  background-color: rgb(121, 200, 242);
+  background-color: var(--secondary-bg-color);
   align-items: center;
   border-radius: 4px;
 }
@@ -21,21 +23,21 @@
 }
 .spanLabel {
   font-size: 18px;
-  color: #2a363b;
+  color: var(--title-text-color);
   font-weight: bold;
   text-transform: capitalize;
 }
 
 .input {
   border-radius: 8px;
-  border: 1px solid #1f54e7;
+  border: 1px solid var(--accent-color);
   padding: 8px 12px;
   font-size: 18px;
   outline: none;
   &:hover,
   &:focus,
   &:active {
-    border: 1px solid #07137d;
+    border: 1px solid var(--accent-color-active-input);
   }
 }
 
@@ -50,19 +52,19 @@
   text-align: center;
   text-decoration: none;
   outline: none;
-  color: #fff;
-  background-color: #1f54e7;
+  color: var(--white-color);
+  background-color: var(--accent-color);
   border: none;
   border-radius: 10px;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
 .btn:hover {
-  background-color: #172ce9;
+  background-color: var(--accent-color-active);
 }
 
 .btn:active {
-  background-color: #172ce9;
+  background-color: var(--accent-color-active);
   box-shadow: 0 1px #666;
   transform: translateY(2px);
 }

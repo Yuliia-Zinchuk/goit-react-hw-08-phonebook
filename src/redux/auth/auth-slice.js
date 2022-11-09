@@ -34,13 +34,14 @@ const authSlice = createSlice({
       })
       .addCase(login.pending, state => {
         state.isLoading = true;
-        state.eroor = null;
+        state.error = null;
       })
 
       .addCase(login.fulfilled, (state, { payload: { user, token } }) => {
         state.isLoading = false;
         state.token = token;
         state.user = user;
+        // state.error = null; //new row
         //   state.isLoggedIn = true;
       })
 
@@ -73,10 +74,11 @@ const authSlice = createSlice({
         state.user = payload;
         //   state.isLoggedIn = true;
         state.isFetchingCurrentUser = false;
+        // state.error = null;
       })
       .addCase(fetchCurrentUser.rejected, (state, { payload }) => {
         state.isLoading = false;
-        state.error = payload;
+        // state.error = payload;
         state.isFetchingCurrentUser = false;
       });
   },

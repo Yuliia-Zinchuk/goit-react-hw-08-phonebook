@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { ContactsListItem } from './ContactsListItem';
 
 import { selectVisibleContacts } from 'redux/contacts/contacts-selectors';
-import css from './ContactsList.module.css';
+import css from './ContactsList.module.scss';
 
 export const ContactsList = ({ onDeleteContact, onUpdateContactModal }) => {
   const visibleContacts = useSelector(selectVisibleContacts);

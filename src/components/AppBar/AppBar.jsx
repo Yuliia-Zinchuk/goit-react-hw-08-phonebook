@@ -5,7 +5,7 @@ import { Navigation } from 'components/Navigation/Navigation';
 import { AuthNavigation } from 'components/AuthNavigation/AuthNavigation';
 import { UserAuthMenu } from 'components/UserAuthMenu/UserAuthMenu';
 
-import css from './AppBar.module.css';
+import css from './AppBar.module.scss';
 export const AppBar = () => {
   const token = useSelector(selectToken);
 

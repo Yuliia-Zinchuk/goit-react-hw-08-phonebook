@@ -14,21 +14,21 @@
 }
 span {
   font-size: 18px;
-  color: black;
+  color: var(--title-text-color);
   font-weight: bold;
   text-transform: capitalize;
 }
 
 .input {
   border-radius: 8px;
-  border: 1px solid #1f54e7;
+  border: 1px solid var(--accent-color);
   padding: 8px 12px;
   font-size: 18px;
   outline: none;
   &:hover,
   &:focus,
   &:active {
-    border: 1px solid #0b1baa;
+    border: 1px solid var(--accent-color-active-input);
   }
 }
 
@@ -43,18 +43,18 @@ span {
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: #1f54e7;
+  background-color: var(--accent-color);
   border: none;
   border-radius: 10px;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
 .btn:hover {
-  background-color: #172ce9;
+  background-color: var(--accent-color-active);
 }
 
 .btn:active {
-  background-color: #172ce9;
+  background-color: var(--accent-color-active);
   box-shadow: 0 1px #666;
   transform: translateY(2px);
 }

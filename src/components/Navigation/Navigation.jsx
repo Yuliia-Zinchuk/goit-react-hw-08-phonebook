@@ -1,7 +1,7 @@
 //import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectToken } from 'redux/auth/auth-selectors';
-import css from './Navigation.module.css';
+import css from './Navigation.module.scss';
 import { StyledLink } from './Navigation.styled';
 
 export const Navigation = () => {

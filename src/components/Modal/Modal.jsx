@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { UpdateContactForm } from 'components/UpdateContactForm/UpdateContactForm';
 
-import css from './Modal.module.css';
+import css from './Modal.module.scss';
 
 export const Modal = ({ closeModal, contact }) => {
   useEffect(() => {

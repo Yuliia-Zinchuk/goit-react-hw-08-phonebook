@@ -1,0 +1,11 @@
+@import '../../assets/styles/mixins';
+.titleHomePage {
+  padding-top: 50px;
+  font-weight: 500px;
+  font-size: 30px;
+  text-align: center;
+  color: var(--title-text-color);
+  @include mq(tab) {
+    font-size: 40px;
+  }
+}

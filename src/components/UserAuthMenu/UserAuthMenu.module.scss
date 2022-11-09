@@ -1,0 +1,55 @@
+@import '../../assets/styles/mixins';
+.wrapper {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+
+  @include mq(tab) {
+    align-items: center;
+    gap: 12px;
+    flex-direction: row;
+  }
+
+  // @media screen and (min-width: 768px) {
+  //   background-color: green;
+  //}
+}
+.userEmail {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--title-text-color);
+  @include mq(tab) {
+    font-size: 20px;
+  }
+}
+
+.btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: var(--white-color);
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 7px;
+  @include mq(tab) {
+    padding: 5px 10px;
+    font-size: 15px;
+  }
+}
+
+.btn:hover {
+  background-color: var(--accent-color-active);
+}
+
+.btn:active {
+  background-color: var(--accent-color-active);
+  box-shadow: 0 1px #666;
+  transform: translateY(2px);
+}

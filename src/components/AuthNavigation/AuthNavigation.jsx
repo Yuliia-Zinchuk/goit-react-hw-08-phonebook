@@ -1,6 +1,6 @@
 //import { Link } from 'react-router-dom';
 import { StyledLink } from './AuthNavigation.styled';
-import css from './AuthNavigation.module.css';
+import css from './AuthNavigation.module.scss';
 
 export const AuthNavigation = () => {
   return (

@@ -9,24 +9,24 @@
 }
 .labelInput {
   font-size: 18px;
-  color: #2a363b;
+  color: var(--title-text-color);
   font-weight: bold;
   text-transform: none;
 }
 
 .input {
   border-radius: 8px;
-  border: 1px solid #1f54e7;
+  border: 1px solid var(--accent-color);
   padding: 8px 12px;
   font-size: 18px;
   outline: none;
   &:hover,
   &:focus,
   &:active {
-    border: 1px solid #07137d;
+    border: 1px solid var(--accent-color-active-input);
   }
 }
 
 .input:focus {
-  border: 1px solid rgb(5, 25, 87);
+  border: 1px solid var(--accent-color-active-input);
 }

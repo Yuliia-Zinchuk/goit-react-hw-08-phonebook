@@ -1,0 +1,10 @@
+@import '../../assets/styles/mixins';
+.linkList {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  font-size: 16px;
+  @include mq(tab) {
+    font-size: 20px;
+  }
+}

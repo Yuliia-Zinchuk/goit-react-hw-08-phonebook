@@ -10,7 +10,7 @@
   position: absolute;
   width: 6px;
   height: 6px;
-  background: #3f51b5;
+  background: var(--accent-color);
   border-radius: 50%;
   animation: lds-default 1.2s linear infinite;
 }

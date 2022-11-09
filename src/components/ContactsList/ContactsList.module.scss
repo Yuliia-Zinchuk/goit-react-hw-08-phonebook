@@ -1,3 +1,4 @@
+@import '../../assets/styles/mixins';
 .contactsList {
   padding: 0;
   font-weight: 400;
@@ -11,10 +12,15 @@
 
 .contact {
   display: flex;
-  gap: 25px;
+  gap: 5px;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid grey;
+  @include mq(tab) {
+  }
+  @include mq(desk) {
+    gap: 25px;
+  }
 }
 
 .contactNumber {
@@ -22,27 +28,43 @@
   justify-content: flex-start;
   margin: 0;
   padding: 10px 5px;
+  font-size: 14px;
+  @include mq(tab) {
+    font-size: 18px;
+  }
+  @include mq(desk) {
+    font-size: 18px;
+  }
 }
 
 .btnWraper {
   display: flex;
-  gap: 5px;
+  // gap: 1px;
+  @include mq(tab) {
+    gap: 5px;
+  }
+  @include mq(desk) {
+    gap: 5px;
+  }
 }
 .btn {
   cursor: pointer;
   text-align: center;
   outline: none;
-  color: #315bd1;
+  /* color: #315bd1; */
+  color: var(--accent-color-active);
   background-color: transparent;
   border: none;
 }
 
 .btn:hover {
-  color: #0b1baa;
+  /* color: #0b1baa; */
+  color: var(--accent-color-active);
   transform: scale(1.5);
 }
 
 .btn:active {
-  color: #0b1baa;
+  /* color: #0b1baa; */
+  color: var(--accent-color-active);
   transform: translateY(4px);
 }

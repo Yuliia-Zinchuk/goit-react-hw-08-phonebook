@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
 import { HiOutlineTrash, HiOutlinePencil } from 'react-icons/hi';
-import css from './ContactsList.module.css';
+import css from './ContactsList.module.scss';
 
 export const ContactsListItem = ({
   name,
   number,
   onUpdateContact,
-
   onDeleteContact,
 }) => (
   <>
@@ -17,10 +16,10 @@ export const ContactsListItem = ({
       <div className={css.btnWraper}>
         {' '}
         <button className={css.btn} onClick={onUpdateContact} type="button">
-          <HiOutlinePencil size={16} />
+          <HiOutlinePencil size={18} />
         </button>
         <button className={css.btn} onClick={onDeleteContact} type="button">
-          <HiOutlineTrash size={16} />
+          <HiOutlineTrash size={18} />
         </button>
       </div>
     </div>

@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { ContactsForm } from 'components/ContactsForm/ContactsForm';
-import { ContactsList } from 'components/ContactsList/ContactsList';
+
 import { Section } from 'components/Section/Section';
 import { Filter } from 'components/Filter/Filter';
 import { Loader } from 'components/Loader/Loader';
+import { ContactsForm } from 'components/ContactsForm/ContactsForm';
+import { ContactsList } from 'components/ContactsList/ContactsList';
+import { Modal } from 'components/Modal/Modal';
 
-import { useDispatch, useSelector } from 'react-redux';
 import {
   selectContacts,
   selectIsLoading,
@@ -16,22 +18,14 @@ import {
 import {
   fetchContacts,
   addContact,
-  // updateContact,
   deleteContact,
 } from 'redux/contacts/contacts-operations';
 import { onFilter } from 'redux/filter/filter-slice';
 
-import css from './ContactsPage.module.css';
-import { Modal } from 'components/Modal/Modal';
-
-// import { RegisterForm } from './RegisterForm/RegisterForm';
-// import { LoginForm } from './LoginForm/LoginForm';
-//import { fetchCurrentUser } from 'redux/auth/auth-operations';
-//import { ContactsList } from 'components/ContactsList/ContactsList';
+import css from './ContactsPage.module.scss';
 
 export const ContactsPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  //const openModal = () => setIsModalOpen(true);
   const [contactToUpdate, setContactToUpdate] = useState(null);
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
@@ -40,7 +34,6 @@ export const ContactsPage = () => {
 
   useEffect(() => {
     dispath(fetchContacts());
-    // dispath(fetchCurrentUser());
   }, [dispath]);
 
   const onAddContact = data => {

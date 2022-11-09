@@ -1,0 +1,18 @@
+@import '../../assets/styles/mixins';
+.wraper {
+  // margin-left: 200px;
+  // margin-right: 200px;
+  display: flex;
+  flex-direction: column;
+
+  @include mq(tab) {
+    align-items: baseline;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  @include mq(desk) {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+}
